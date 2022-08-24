@@ -16,7 +16,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-          {/* https://grotesque-watch.surge.sh/ */}
+          {/* https://grotesque-watch.surge.sh/  */}
         </a>
       </header>
     </div>
