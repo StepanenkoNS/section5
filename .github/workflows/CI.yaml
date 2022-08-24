@@ -15,7 +15,7 @@ jobs:
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json')}}
-          restore-key: |
+          restore-keys: |
             ${{ runner.os }}-node-
       - name: Use NodeJs
         uses: actions/setup-node@v1
@@ -23,12 +23,26 @@ jobs:
           node-version: "12.x"
       - run: npm ci
       - run: npm run format:check
+
       - run: npm test -- --coverage
         env:
           CI: true
+      - name: Upload test coverage  
+        uses: actions/upload-artifact@v1
+        with:
+          name: code-coverage
+          path: coverage
+
+      # - uses: actions/download-artifact@v1
+
       - name: Build project
         if: github.event_name == 'push'
         run: npm run build
+      - name: Upload build foler coverage  
+        uses: actions/upload-artifact@v1
+        with:
+          name: build
+          path: build        
       - name: Deploy to staging
         if: github.event_name == 'push'
         run: npx surge --project ./build --domain grotesque-watch.surge.sh
