@@ -1,4 +1,4 @@
-![](https://github.com/StepanenkoNS/section5/workflows/CI/badge.svg?branch=development&event=push)
+![](https://github.com/StepanenkoNS/section5/workflows/CI/badge.svg)
 
 # Getting Started with Create React App
 
