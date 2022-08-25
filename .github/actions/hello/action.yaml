@@ -1,0 +1,14 @@
+name: Hello world
+author: Nick
+description: desc
+inputs:
+  who-to-greet:
+    description: "Who to great"
+    required: true
+    default: User
+outputs:
+  time:
+    description: "Greeting time"
+runs:
+  using: "node16"
+  main: "dist/index.js"
