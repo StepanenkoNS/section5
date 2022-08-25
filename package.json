@@ -17,7 +17,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format:check": "prettier --check \"**/*.{js,jsx,yml,yaml,css,scss,md}\" ",
-    "format": "prettier --write \"**/*.{js,jsx,yml,yaml,css,scss,md}\" "
+    "format:fix": "prettier --write \"**/*.{js,jsx,yml,yaml,css,scss,md}\" "
   },
   "eslintConfig": {
     "extends": [
@@ -46,6 +46,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "husky": "^8.0.1",
     "prettier": "^2.7.1",
     "semantic-release": "^19.0.5"
   }
